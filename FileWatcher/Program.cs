@@ -9,16 +9,13 @@ using System.Threading.Tasks;
 namespace FileWatcher
 {
     class Program
-    {
-        
-
+    {     
         static void Main(string[] args)
         {
             string path = "test.txt";
             var myFile=File.Create(path);
             myFile.Close();
             var watcher = new FileWatchers(path);
-            
             
             watcher.ChangeFile += FileIsChange;
             watcher.Start();
